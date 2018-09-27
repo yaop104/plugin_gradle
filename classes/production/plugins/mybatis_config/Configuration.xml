@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+	PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<settings>
+		<setting name="cacheEnabled" value="true"/>  
+		<setting name="lazyLoadingEnabled" value="true"/>  
+		<setting name="multipleResultSetsEnabled" value="true"/>  
+		<setting name="useColumnLabel" value="true"/>  
+		<setting name="useGeneratedKeys" value="true"/>  
+		<setting name="defaultExecutorType" value="SIMPLE"/>  
+		<setting name="defaultStatementTimeout" value="25000"/>  
+	</settings>
+	
+	<!--！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！这里配置bean文件！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！ -->
+	<typeAliases>
+		<typeAlias type="com.sme.entity.SysRole" alias="SysRole" />
+		<typeAlias type="com.sme.entity.SysOrg" alias="SysOrg" />
+		<typeAlias type="com.sme.entity.SysMenu" alias="SysMenu" />
+		<typeAlias type="com.sme.entity.SysAcc" alias="SysAcc" /> 
+		<typeAlias type="com.sme.entity.SysRoleMenu" alias="SysRoleMenu" />
+		<typeAlias type="com.sme.entity.Feedback" alias="Feedback" />
+		<typeAlias type="com.sme.entity.Msgcontent" alias="Msgcontent" />
+		<typeAlias type="com.sme.entity.TdcDictionary" alias="TdcDictionary" />
+		<typeAlias type="com.sme.entity.TsmSendMessage" alias="TsmSendMessage" />
+		<typeAlias type="com.sme.entity.FruitItem" alias="FruitItem" />
+		<typeAlias type="com.sme.entity.FruitOrder" alias="FruitOrder" />
+		<typeAlias type="com.sme.entity.FruitOrderLog" alias="FruitOrderLog" />
+	</typeAliases>
+	
+	<!--<environments default="MySQL">
+		<environment id="MySQL">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="${driver}" />
+				<property name="url" value="${url}" />
+				<property name="username" value="${username}" />
+				<property name="password" value="${password}" />
+			</dataSource>
+		</environment>
+	</environments>
+	-->
+	
+	<!--！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！这里添加mybatis配置文件！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！！ -->
+	<mappers>
+		<mapper resource="./mybatis_config/SysRoleDao.xml"/>
+		<mapper resource="./mybatis_config/SysOrgDao.xml"/>
+		<mapper resource="./mybatis_config/SysMenuDao.xml"/>
+		<mapper resource="./mybatis_config/SysAccDao.xml"/>
+		<mapper resource="./mybatis_config/SysRoleMenuDao.xml"/>
+		<mapper resource="./mybatis_config/LoginLog.xml"/>
+		<mapper resource="./mybatis_config/OperateLog.xml"/>
+		<mapper resource="./mybatis_config/FeedbackDao.xml"/>
+		<mapper resource="./mybatis_config/MsgcontentDao.xml"/>
+		<mapper resource="./mybatis_config/TdcDictionaryDao.xml"/>
+		<mapper resource="./mybatis_config/TsmSendMessageDao.xml"/>
+		<mapper resource="./mybatis_config/FruitItemDao.xml"/>
+		<mapper resource="./mybatis_config/FruitOrderDao.xml"/>
+		<mapper resource="./mybatis_config/FruitOrderLogDao.xml"/>
+	</mappers>
+</configuration>

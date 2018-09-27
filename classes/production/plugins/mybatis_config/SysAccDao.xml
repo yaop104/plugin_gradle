@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sme.dao.SysAccDao">
+	<resultMap id="fieldMapper" type="com.sme.entity.SysAcc">
+		<result property="sysAccId" column="sysAccId" /><!--id-->
+		<result property="sysAccName" column="sysAccName" /><!--昵称-->
+		<result property="sysAccRealname" column="sysAccRealname" /><!--真实姓名-->
+		<result property="sysAccState" column="sysAccState" /><!--状态-->
+		<result property="sysAccPassword" column="sysAccPassword" /><!--密码-->
+		<result property="sysAccDesc" column="sysAccDesc" /><!--描述-->
+		<result property="sysAccRoleid" column="sysAccRoleid" /><!--角色ID-->
+		<result property="sysAccOrgid" column="sysAccOrgid" /><!--组织ID-->
+		<result property="sysAccCdate" column="sysAccCdate" /><!--记录日期-->
+		<result property="sysAccUdate" column="sysAccUdate" /><!--更新日期-->
+		<result property="sysAccCuser" column="sysAccCuser" /><!--记录人-->
+		<result property="sysAccUueser" column="sysAccUueser" /><!--创建人-->
+		<result property="sysAccType" column="sysAccType" /><!--类型 1用户2开发商3财务4系统-->
+		<result property="sysAccMobile" column="sysAccMobile" /><!--号码-->
+		<result property="sysAccEmail" column="sysAccEmail" /><!--email-->
+		<result property="sysAccHead" column="sysAccHead" /><!--头像-->
+		<result property="sysAccMoney" column="sysAccMoney" /><!--钱-->
+		<result property="sysAccUserType" column="sysAccUserType" /><!--1后台2app-->
+		<result property="sysAccToken" column="sysAccToken" /><!--token-->
+	</resultMap>
+
+	<sql id="fieldAsProperty">
+		sys_acc_id AS sysAccId,
+		sys_acc_name AS sysAccName,
+		sys_acc_realname AS sysAccRealname,
+		sys_acc_state AS sysAccState,
+		sys_acc_password AS sysAccPassword,
+		sys_acc_desc AS sysAccDesc,
+		sys_acc_roleid AS sysAccRoleid,
+		sys_acc_orgid AS sysAccOrgid,
+		sys_acc_cdate AS sysAccCdate,
+		sys_acc_udate AS sysAccUdate,
+		sys_acc_cuser AS sysAccCuser,
+		sys_acc_uueser AS sysAccUueser,
+		sys_acc_type AS sysAccType,
+		sys_acc_mobile AS sysAccMobile,
+		sys_acc_email AS sysAccEmail,
+		sys_acc_head AS sysAccHead,
+		sys_acc_money AS sysAccMoney,
+		sys_acc_user_type AS sysAccUserType,
+		sys_acc_token AS sysAccToken
+	</sql>
+
+	<sql id="field">
+		sys_acc_name,
+		sys_acc_realname,
+		sys_acc_state,
+		sys_acc_password,
+		sys_acc_desc,
+		sys_acc_roleid,
+		sys_acc_orgid,
+		sys_acc_cdate,
+		sys_acc_udate,
+		sys_acc_cuser,
+		sys_acc_uueser,
+		sys_acc_type,
+		sys_acc_mobile,
+		sys_acc_email,
+		sys_acc_head,
+		sys_acc_money,
+		sys_acc_user_type,
+		sys_acc_token
+	</sql>
+
+	<sql id="property">
+		#{sysAccName,jdbcType=VARCHAR},
+		#{sysAccRealname,jdbcType=INTEGER},
+		#{sysAccState,jdbcType=VARCHAR},
+		#{sysAccPassword,jdbcType=INTEGER},
+		#{sysAccDesc,jdbcType=VARCHAR},
+		#{sysAccRoleid,jdbcType=VARCHAR},
+		#{sysAccOrgid,jdbcType=VARCHAR},
+		#{sysAccCdate,jdbcType=TIMESTAMP},
+		#{sysAccUdate,jdbcType=TIMESTAMP},
+		#{sysAccCuser,jdbcType=VARCHAR},
+		#{sysAccUueser,jdbcType=VARCHAR},
+		#{sysAccType,jdbcType=VARCHAR},
+		#{sysAccMobile,jdbcType=VARCHAR},
+		#{sysAccEmail,jdbcType=VARCHAR},
+		#{sysAccHead,jdbcType=VARCHAR},
+		#{sysAccMoney,jdbcType=INTEGER},
+		#{sysAccUserType,jdbcType=VARCHAR},
+		#{sysAccToken,jdbcType=VARCHAR}
+	</sql>
+
+	<sql id="fieldEqProperty">
+		sys_acc_name=#{sysAccName,jdbcType=VARCHAR},
+		sys_acc_realname=#{sysAccRealname,jdbcType=INTEGER},
+		sys_acc_state=#{sysAccState,jdbcType=VARCHAR},
+		sys_acc_password=#{sysAccPassword,jdbcType=INTEGER},
+		sys_acc_desc=#{sysAccDesc,jdbcType=VARCHAR},
+		sys_acc_roleid=#{sysAccRoleid,jdbcType=VARCHAR},
+		sys_acc_orgid=#{sysAccOrgid,jdbcType=VARCHAR},
+		sys_acc_cdate=#{sysAccCdate,jdbcType=TIMESTAMP},
+		sys_acc_udate=#{sysAccUdate,jdbcType=TIMESTAMP},
+		sys_acc_cuser=#{sysAccCuser,jdbcType=VARCHAR},
+		sys_acc_uueser=#{sysAccUueser,jdbcType=VARCHAR},
+		sys_acc_type=#{sysAccType,jdbcType=VARCHAR},
+		sys_acc_mobile=#{sysAccMobile,jdbcType=VARCHAR},
+		sys_acc_email=#{sysAccEmail,jdbcType=VARCHAR},
+		sys_acc_head=#{sysAccHead,jdbcType=VARCHAR},
+		sys_acc_money=#{sysAccMoney,jdbcType=INTEGER},
+		sys_acc_user_type=#{sysAccUserType,jdbcType=VARCHAR},
+		sys_acc_token=#{sysAccToken,jdbcType=VARCHAR}
+	</sql>
+
+	<sql id="fieldEqPropertyIf">
+		<if test="sysAccName!=null" >sys_acc_name=#{sysAccName,jdbcType=VARCHAR},</if>
+		<if test="sysAccRealname!=null" >sys_acc_realname=#{sysAccRealname,jdbcType=INTEGER},</if>
+		<if test="sysAccState!=null" >sys_acc_state=#{sysAccState,jdbcType=VARCHAR},</if>
+		<if test="sysAccPassword!=null" >sys_acc_password=#{sysAccPassword,jdbcType=INTEGER},</if>
+		<if test="sysAccDesc!=null" >sys_acc_desc=#{sysAccDesc,jdbcType=VARCHAR},</if>
+		<if test="sysAccRoleid!=null" >sys_acc_roleid=#{sysAccRoleid,jdbcType=VARCHAR},</if>
+		<if test="sysAccOrgid!=null" >sys_acc_orgid=#{sysAccOrgid,jdbcType=VARCHAR},</if>
+		<if test="sysAccCdate!=null" >sys_acc_cdate=#{sysAccCdate,jdbcType=TIMESTAMP},</if>
+		<if test="sysAccUdate!=null" >sys_acc_udate=#{sysAccUdate,jdbcType=TIMESTAMP},</if>
+		<if test="sysAccCuser!=null" >sys_acc_cuser=#{sysAccCuser,jdbcType=VARCHAR},</if>
+		<if test="sysAccUueser!=null" >sys_acc_uueser=#{sysAccUueser,jdbcType=VARCHAR},</if>
+		<if test="sysAccType!=null" >sys_acc_type=#{sysAccType,jdbcType=VARCHAR},</if>
+		<if test="sysAccMobile!=null" >sys_acc_mobile=#{sysAccMobile,jdbcType=VARCHAR},</if>
+		<if test="sysAccEmail!=null" >sys_acc_email=#{sysAccEmail,jdbcType=VARCHAR},</if>
+		<if test="sysAccHead!=null" >sys_acc_head=#{sysAccHead,jdbcType=VARCHAR},</if>
+		<if test="sysAccMoney!=null" >sys_acc_money=#{sysAccMoney,jdbcType=INTEGER},</if>
+		<if test="sysAccUserType!=null" >sys_acc_user_type=#{sysAccUserType,jdbcType=VARCHAR},</if>
+		<if test="sysAccToken!=null" >sys_acc_token=#{sysAccToken,jdbcType=VARCHAR}</if>
+	</sql>
+	<select id="page" resultType="com.sme.entity.SysAcc" parameterType="map">
+
+		SELECT IFNULL(tio_name,'') AS orgname, IFNULL(t_sys_role_name,'') AS rolename,<include refid="fieldAsProperty" />
+		FROM sys_acc
+		LEFT JOIN sysrole ON t_sys_role_id = sys_acc_roleid
+		LEFT JOIN tbc_info ON tio_unid = sys_acc_orgid
+		<include refid="idCnd3"/>
+		order by sys_acc_id desc
+		<if test="page!=null and pageCount!=null">
+			limit #{page}, #{pageCount}
+		</if>
+	</select>
+	<select id="count" resultType="Integer" parameterType="map">
+		select count(*) FROM sys_acc
+		LEFT JOIN sysrole ON t_sys_role_id = sys_acc_roleid
+		LEFT JOIN tbc_info ON tio_unid = sys_acc_orgid <include refid="idCnd3"/>
+	</select>
+	<select id="select" parameterType="com.sme.entity.SysAcc" resultType="com.sme.entity.SysAcc">
+		SELECT <include refid="fieldAsProperty" /> FROM sys_acc <include refid="idCnd2"/>
+	</select>
+	<insert id="insert" parameterType="com.sme.entity.SysAcc">
+		INSERT INTO sys_acc	(<include refid="field" />) VALUES (<include refid="property" />)
+	</insert>
+	<delete id="delete" parameterType="com.sme.entity.SysAcc">
+		DELETE FROM sys_acc	<include refid="idCnd" />
+	</delete>
+	<select id="getById" resultType="com.sme.entity.SysAcc"
+			parameterType="com.sme.entity.SysAcc">
+		SELECT<include refid="fieldAsProperty" />FROM sys_acc	<include refid="idCnd" />
+	</select>
+
+	<!-- 删除 软删除 -->
+	<update id="deleteById" parameterType="int">
+		update sys_acc set sys_acc_state = 2 where sys_acc_id = #{id}
+	</update>
+
+	<update id="update" parameterType="com.sme.entity.SysAcc">
+		UPDATE sys_acc	<set><include refid="fieldEqPropertyIf" /></set><include refid="idCnd" />
+	</update>
+
+	<sql id="idCnd">
+		<where>
+			<if test="sysAccId!=null" >sys_acc_id=#{sysAccId,jdbcType=INTEGER}</if>
+			<if test="sysAccId==null">AND 1=0</if>
+		</where>
+	</sql>
+	<!-- ================== start ================== -->
+	<sql id="idCnd2">
+		<where>
+			<if test="sysAccId!=null and sysAccId!=''" >sys_acc_id=#{sysAccId,jdbcType=INTEGER}</if>
+			<if test="sysAccName!=null and sysAccName!=''" >AND sys_acc_name=#{sysAccName,jdbcType=VARCHAR}</if>
+			<if test="sysAccRealname!=null and sysAccRealname!=''" >AND sys_acc_realname=#{sysAccRealname,jdbcType=VARCHAR}</if>
+			<if test="sysAccState!=null and sysAccState!=''" >AND sys_acc_state=#{sysAccState,jdbcType=VARCHAR}</if>
+			<if test="sysAccPassword!=null and sysAccPassword!=''" >AND sys_acc_password=#{sysAccPassword,jdbcType=VARCHAR}</if>
+			<if test="sysAccDesc!=null and sysAccDesc!=''" >AND sys_acc_desc=#{sysAccDesc,jdbcType=VARCHAR}</if>
+			<if test="sysAccRoleid!=null and sysAccRoleid!=''" >AND sys_acc_orgid=#{sysAccRoleid,jdbcType=VARCHAR}</if>
+			<if test="sysAccType!=null and sysAccType!=''" >AND sys_acc_type=#{sysAccType,jdbcType=VARCHAR}</if>
+			<if test="sysAccMobile!=null and sysAccMobile!=''" >AND sys_acc_mobile=#{sysAccMobile,jdbcType=VARCHAR}</if>
+			<if test="sysAccEmail!=null and sysAccEmail!=''" >AND sys_acc_email=#{sysAccEmail,jdbcType=VARCHAR}</if>
+			<if test="sysAccUserType!=null and sysAccUserType!=''" >AND sys_acc_user_type=#{sysAccUserType,jdbcType=VARCHAR}</if>
+			<if test="sysAccToken!=null and sysAccToken!=''" >AND sys_acc_token=#{sysAccToken,jdbcType=VARCHAR}</if>
+		</where>
+	</sql>
+	<sql id="idCnd3">
+		<where>
+			<if test="sysAccId!=null and sysAccId!=''" >sys_acc_id=#{sysAccId,jdbcType=INTEGER}</if>
+			<if test="sysAccName!=null and sysAccName!=''" >AND sys_acc_name LIKE CONCAT(CONCAT('%', #{sysAccName}), '%')</if>
+			<if test="sysAccRealname!=null and sysAccRealname!=''" >AND sys_acc_realname=#{sysAccRealname,jdbcType=VARCHAR}</if>
+			<if test="sysAccState!=null and sysAccState!=''" >AND sys_acc_state=#{sysAccState,jdbcType=VARCHAR}</if>
+			<if test="sysAccPassword!=null and sysAccPassword!=''" >AND sys_acc_password=#{sysAccPassword,jdbcType=VARCHAR}</if>
+			<if test="sysAccDesc!=null and sysAccDesc!=''" >AND sys_acc_desc=#{sysAccDesc,jdbcType=VARCHAR}</if>
+			<if test="sysAccRoleid!=null and sysAccRoleid!=''" >AND sys_acc_orgid=#{sysAccRoleid,jdbcType=VARCHAR}</if>
+			<if test="sysAccType!=null and sysAccType!=''" >AND sys_acc_type=#{sysAccType,jdbcType=VARCHAR}</if>
+			<if test="sysAccUserType!=null and sysAccUserType!=''" >AND sys_acc_user_type=#{sysAccUserType,jdbcType=VARCHAR}</if>
+			<if test="sysAccToken!=null and sysAccToken!=''" >AND sys_acc_token=#{sysAccToken,jdbcType=VARCHAR}</if>
+			<if test="sysAccMobile!=null and sysAccMobile!=''" >AND sys_acc_mobile=#{sysAccMobile,jdbcType=VARCHAR}</if>
+			<if test="sysAccEmail!=null and sysAccEmail!=''" >AND sys_acc_email=#{sysAccEmail,jdbcType=VARCHAR}</if>
+			<if test="startTime!=null and startTime!=''" >AND sys_acc_cdate <![CDATA[> ]]> #{startTime,jdbcType=TIMESTAMP}</if>
+			<if test="endTime!=null and endTime!=''" >AND sys_acc_cdate <![CDATA[< ]]> #{endTime,jdbcType=TIMESTAMP}</if>
+		</where>
+	</sql>
+	<!-- ================== end ================== -->
+</mapper>

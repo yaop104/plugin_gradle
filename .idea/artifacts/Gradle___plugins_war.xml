@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Gradle : plugins.war">
+    <output-path>$PROJECT_DIR$/out/libs</output-path>
+    <properties id="gradle-properties">
+      <options external-project-path="$PROJECT_DIR$" />
+    </properties>
+    <root id="archive" name="plugins.war">
+      <element id="artifact" artifact-name="Gradle : plugins.war (exploded)" />
+    </root>
+  </artifact>
+</component>

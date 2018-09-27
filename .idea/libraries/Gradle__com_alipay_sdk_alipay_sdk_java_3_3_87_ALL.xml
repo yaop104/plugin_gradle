@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.alipay.sdk:alipay-sdk-java:3.3.87.ALL">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.alipay.sdk/alipay-sdk-java/3.3.87.ALL/577944a24f7aaaa3742105689d02071186a5bdcb/alipay-sdk-java-3.3.87.ALL.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.alipay.sdk/alipay-sdk-java/3.3.87.ALL/e754b10d4cf6570d5897ff2e841ab230d72a5678/alipay-sdk-java-3.3.87.ALL-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
